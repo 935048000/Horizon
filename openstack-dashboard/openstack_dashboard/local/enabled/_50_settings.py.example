@@ -1,0 +1,12 @@
+# The name of the dashboard to be added to HORIZON['dashboards']. Required.
+# 将指示板的名称添加到 HORIZON['dashboards'].。必需的
+DASHBOARD = 'settings'
+
+# If set to True, this dashboard will not be added to the settings.
+# 如果设置为True，这个指示板将不会被添加到设置中。
+DISABLED = False
+
+# 自定义：
+#   自己开发一个dashboard需要在openstack_dashboard/enabled
+#   添加一个类似 _50_mydashboard.py文件，
+#   这样才会被注入到settings.INSTALLED_APPS配置项中
