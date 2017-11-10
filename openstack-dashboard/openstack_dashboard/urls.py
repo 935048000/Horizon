@@ -19,7 +19,7 @@
 
 """
 URL patterns for the OpenStack Dashboard.
-OpenStack仪表板的URL模式。
+OpenStack Dashboard的URL patterns。
 """
 
 from django.conf import settings

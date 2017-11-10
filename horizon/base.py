@@ -254,7 +254,7 @@ class Panel(HorizonComponent):
 
         A unique "short name" for the panel. The slug is used as
         a component of the URL path for the panel. Default: ``''``.
-        一个独特的“短名称”用于面板。蛞蝓被用作
+        一个独特的“短名称”用于面板。slug被用作
         面板的URL路径的组件。默认值:“”“”。
 
     .. attribute:: permissions
@@ -950,11 +950,11 @@ class Site(Registry, HorizonComponent):
          @property 可以将python定义的函数“当做”属性访问。
         """
         def url_patterns():
-            #url_patterns作为一个方法引用当作参数。
+            # url_patterns作为一个方法引用当作参数。
             return self._urls()[0]
             # LazyURLPattern(url_patterns) 猜测这是一个懒惰方法，load的时候把方法传入，
             # 当需要使用的使用才执行方法。
-            # request 请求进来的时候，回去Openstack.urls.py 进行配置，
+            # request 请求进来的时候，会去Openstack.urls.py 进行配置，
             # include('openstack_auth.urls')这个时候会执行url_patterns()
             # self.namespace = "horizon"
             # self.slug = "horizon"
@@ -974,7 +974,7 @@ class Site(Registry, HorizonComponent):
 
         # Discover each dashboard's panels.
         # 发现每个dashboard的panels。
-        #从注册表self._registry取出注册dashboard，注册每个dashboard中的panel
+        # 从注册表self._registry取出注册dashboard，注册每个dashboard中的panel
         for dash in self._registry.values():
             dash._autodiscover()
 
